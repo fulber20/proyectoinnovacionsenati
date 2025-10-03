@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/curso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>CiarOffice</title>
+</head>
+<body>
+    <div class="encabezado">
+        <div class="header-left">
+            <h1 class="app-title">
+                <img src="../img/logo2.png" alt="logo">
+                CiarOffice
+            </h1>
+        </div>
+        <div class="header-right">
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name" id="userName">Cargando...</span>
+                <span class="user-role" id="userRole"></span>
+            </div>
+            <button class="logout-btn" onclick="window.location.href='../dashboard.html'">
+                <i class="fas fa-sign-out-alt"></i>
+                Volver
+            </button>
+        </div>
+    </div>
+    <main>
+        <section class="courses-section">
+            <div class="section-title" data-section="async">Cursos asincrónicos</div>
+            <div class="section-title" data-section="online">Cursos online</div>
+        </section>
+        <div class="container">
+            <div class="async-courses">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Link</th>
+                            <th>Fecha de subido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Curso 1</td>
+                            <td>Descripción de el curso 1</td>
+                            <td>https://campusromero.pe...</td>
+                            <td>03/08/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Curso 2</td>
+                            <td>Descripción de el curso 1</td>
+                            <td>https://campusromero.pe...</td>
+                            <td>03/08/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Curso 3</td>
+                            <td>Descripción de el curso 3</td>
+                            <td>https://campusromero.pe...</td>
+                            <td>03/08/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Curso 4</td>
+                            <td>Descripción de el curso 4</td>
+                            <td>https://campusromero.pe...</td>
+                            <td>03/08/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Curso 5</td>
+                            <td>Descripción de el curso 5</td>
+                            <td>https://campusromero.pe...</td>
+                            <td>03/08/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Curso 6</td>
+                            <td>Descripción de el curso 9</td>
+                            <td>https://campusromero.pe...</td>
+                            <td>03/08/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Curso 7</td>
+                            <td>Descripción de el curso 1</td>
+                            <td>https://campusromero.pe...</td>
+                            <td>03/08/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Curso 8</td>
+                            <td>Descripción de el curso 7</td>
+                            <td>https://campusromero.pe...</td>
+                            <td>03/08/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Curso 9</td>
+                            <td>Descripción de el curso 9</td>
+                            <td>https://campusromero.pe...</td>
+                            <td>03/08/2023</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="online-courses hidden">
+                <h2>Agenda de Clases - Septiembre 2025</h2>
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button class="prev-month">&lt;</button>
+                        <span class="month-year"></span>
+                        <button class="next-month">&gt;</button>
+                    </div>
+                    <div class="calendar-grid"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/panel.js"></script>
+    <script src="../js/cursos.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CiarOffice</title>
+    <link rel="stylesheet" href="../css/asistencia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+   <div class="encabezado">
+    <div class="header-left">
+      <h1 class="app-title">
+        <img src="../img/logo2.png" alt="logo">
+        CiarOffice
+      </h1>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <i class="fas fa-user-circle"></i>
+        <span class="user-name" id="userName">Cargando...</span>
+        <span class="user-role" id="userRole"></span>
+      </div>
+      <button class="logout-btn" onclick="window.location.href='../dashboard.html'">
+        <i class="fas fa-sign-out-alt"></i>
+        Volver
+      </button>
+    </div>
+    
+  </div>
+   <div class="container-todo">
+    <div class="top-row">
+      <div class="card-tarjeta">
+        <h3>Usuarios activos</h3>
+        <div class="numero">
+          0
+        </div>
+      </div>
+      <div class="card_personal">
+        <h3> Patrones de puntualidad</h3>
+        <p class="resumen">Tardías Promedio: <strong>2.5 / semana</strong></p>
+        
+        <ul class="lista-tardanzas">
+          <li><i class="fas fa-clock"></i> Juan Pérez: <span class="tarde">tarde</span> (02/09/2025)</li>
+          <li><i class="fas fa-clock"></i> María López: <span class="tarde">tarde</span> (01/09/2025)</li>
+        </ul>
+        
+        <button class="btn-detalles">Ver más detalles</button>
+      </div>
+      <div class="chart-container">
+        <canvas id="asistenciaChart"></canvas>
+      </div>
+    </div>
+    <div class="tabla-container">
+      <h3>Lista de Asistencia</h3>
+    <div class="buscador-filtros">
+  <div class="search">
+    <input type="text" placeholder="Buscar por usuario o fecha...">
+  </div>
+  <div class="filtro">
+    <select>
+      <option value="">Filtrar por tipo</option>
+      <option value="entrada">Entrada</option>
+      <option value="salida">Salida</option>
+      <option value="tarde">Tarde</option>
+      <option value="temprano">Temprano</option>
+    </select>
+  </div>
+</div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID Asistencia</th>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Hora Marcado</th>
+              <th>Tipo</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td><td>Ana lopez</td><td>2025-09-04</td><td>08:30 AM</td><td>Entrada</td>
+              <td><span class="estado temprano">Temprano</span></td>
+              <td><button class="btn-detalles">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>2</td><td>Jorge cardenas</td><td>2025-09-04</td><td>09:15 AM</td><td>Entrada</td>
+              <td><span class="estado tarde">Tarde</span></td>
+              <td><button class="btn-detalles">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>3</td><td>Andy perez</td><td>2025-09-03</td><td>07:45 AM</td><td>Entrada</td>
+              <td><span class="estado temprano">Temprano</span></td>
+              <td><button class="btn-detalles">Detalles</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Solicitud de Permiso -->
+    <div class="solicitud">
+      <h3>Solicitud de permiso</h3>
+      <div class="solicitud-wrapper">
+        <p><strong>Juan Pérez</strong> - Vacaciones<br> Fechas: 10/09/2025 - 15/09/2025</p>
+        <small><a href="#"> ▶ Historial de Puntualidad</a></small>
+        <div class="acciones">
+          <button class="aprobar">Aprobar</button>
+          <button class="rechazar">Rechazar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/panel.js"></script>
+  <script src="../js/diagrama.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      background: linear-gradient(135deg, #062A56 0%, #FACD32 50%);
+    }
+
+    /* Splash screen más profesional con animaciones */
+    #splash {
+      background: linear-gradient(135deg, #FACD32 0%, #062A56 100%);
+      color: white;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    #logo {
+      font-size: 3.5rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      animation: slideDown 1s ease-out 0.3s both;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .loading-text {
+      font-size: 1.2rem;
+      font-weight: 300;
+      opacity: 0.9;
+      animation: pulse 2s infinite;
+    }
+
+    .loading-dots {
+      display: inline-block;
+      animation: dots 1.5s infinite;
+    }
+
+    /* Formulario de login más moderno y profesional */
+    #login {
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: slideIn 0.6s ease-out;
+    }
+
+    .login-container {
+      background: white;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      border: #062A56 3px solid;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      animation: scaleIn 0.5s ease-out 0.2s both;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .login-title {
+      color: #2c3e50;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .login-subtitle {
+      color: #7f8c8d;
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+      border: 2px solid #e9ecef;
+      border-radius: 12px;
+      background: #f8f9fa;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #667eea;
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    }
+
+    input::placeholder {
+      color: #adb5bd;
+      font-weight: 400;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: linear-gradient(135deg,#062A56 0%, #FACD32 100%);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    /* Animaciones profesionales */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 0.6; }
+    }
+
+    @keyframes dots {
+      0%, 20% { content: ''; }
+      40% { content: '.'; }
+      60% { content: '..'; }
+      80%, 100% { content: '...'; }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    /* Responsive design para dispositivos móviles */
+    @media (max-width: 480px) {
+      .login-container {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+      }
+      
+      #logo {
+        font-size: 2.5rem;
+      }
+      
+      .login-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Efectos adicionales para profesionalismo */
+    .company-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    .version-info {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+    }

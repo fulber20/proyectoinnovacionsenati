@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/add.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>CiarOffice</title>
+  
+</head>
+<body>
+   <!-- Pantalla Splash -->
+  <div id="splash">
+    <div id="logo">CiarOffice</div>
+    <p class="loading-text">Iniciando sistema empresarial<span class="loading-dots"></span></p>
+    <div class="company-badge">Sistema de Gestión Empresarial</div>
+  </div>
+  
+  <!-- Login -->
+  <div id="login" style="display:none;">
+    <div class="login-container">
+      <div class="login-header">
+        <h1 class="login-title">CiarOffice</h1>
+        <p class="login-subtitle">Panel de Administración</p>
+      </div>
+      <div id="notification" style="
+    display: none; 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    background: #e74c3c; 
+    color: white; 
+    padding: 12px 18px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    font-size: 14px; 
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  ">
+    <span id="notificationMessage"></span>
+  </div>
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="text" placeholder="Usuario o Email" required>
+        </div>
+        <div class="input-group" style="position:relative;">
+          <input id="password" type="password" placeholder="Contraseña" required style="width: 100%; padding-right: 40px;">
+          <span onclick="togglePassword()" 
+                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+            <i id="toggleIcon" class="fa-solid fa-eye"></i>
+          </span>
+        </div>
+        <button type="submit">Acceder</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="js/adds.js"></script>
+  <script src="../index.js"></script>
+</body>
+</html>

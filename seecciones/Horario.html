@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/horario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>CiarOffice</title>
+</head>
+<body>
+   <div class="encabezado">
+        <div class="header-left">
+            <h1 class="app-title">
+                <img src="../img/logo2.png" alt="logo">
+                CiarOffice
+            </h1>
+        </div>
+        <div class="header-right">
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name" id="userName">Cargando...</span>
+                <span class="user-role" id="userRole"></span>
+            </div>
+             <button class="logout-btn" onclick="window.location.href='../dashboard.html'">
+                <i class="fas fa-sign-out-alt"></i>
+                Volver
+            </button>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="schedule-form">
+            <h2>Fijar Horario Semanal</h2>
+            <div class="form-group">
+                <label for="employee">Empleado</label>
+                <select id="employee" required>
+                    <option value="">Seleccione un empleado</option>
+                </select>
+            </div>
+            <div id="weeklySchedule">
+                <h3>Días de la Semana</h3>
+                <div class="day-row" data-day="lunes">
+                    <input type="checkbox" id="lunes" value="Lunes">
+                    <label for="lunes">Lunes</label>
+                    <div class="time-select">
+                        <select id="lunesStartHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="lunesStartMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="lunesStartAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <div class="time-select">
+                        <select id="lunesEndHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="lunesEndMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="lunesEndAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <input type="number" id="lunesTolerance" class="tolerance-input" placeholder="Min" disabled min="0">
+                </div>
+                <div class="day-row" data-day="martes">
+                    <input type="checkbox" id="martes" value="Martes">
+                    <label for="martes">Martes</label>
+                    <div class="time-select">
+                        <select id="martesStartHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="martesStartMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="martesStartAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <div class="time-select">
+                        <select id="martesEndHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="martesEndMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="martesEndAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <input type="number" id="martesTolerance" class="tolerance-input" placeholder="Min" disabled min="0">
+                </div>
+                <div class="day-row" data-day="miercoles">
+                    <input type="checkbox" id="miercoles" value="Miércoles">
+                    <label for="miercoles">Miércoles</label>
+                    <div class="time-select">
+                        <select id="miercolesStartHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="miercolesStartMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="miercolesStartAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <div class="time-select">
+                        <select id="miercolesEndHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="miercolesEndMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="miercolesEndAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <input type="number" id="miercolesTolerance" class="tolerance-input" placeholder="Min" disabled min="0">
+                </div>
+                <div class="day-row" data-day="jueves">
+                    <input type="checkbox" id="jueves" value="Jueves">
+                    <label for="jueves">Jueves</label>
+                    <div class="time-select">
+                        <select id="juevesStartHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="juevesStartMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="juevesStartAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <div class="time-select">
+                        <select id="juevesEndHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="juevesEndMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="juevesEndAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <input type="number" id="juevesTolerance" class="tolerance-input" placeholder="Min" disabled min="0">
+                </div>
+                <div class="day-row" data-day="viernes">
+                    <input type="checkbox" id="viernes" value="Viernes">
+                    <label for="viernes">Viernes</label>
+                    <div class="time-select">
+                        <select id="viernesStartHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="viernesStartMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="viernesStartAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <div class="time-select">
+                        <select id="viernesEndHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="viernesEndMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="viernesEndAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <input type="number" id="viernesTolerance" class="tolerance-input" placeholder="Min" disabled min="0">
+                </div>
+                <div class="day-row" data-day="sabado">
+                    <input type="checkbox" id="sabado" value="Sábado">
+                    <label for="sabado">Sábado</label>
+                    <div class="time-select">
+                        <select id="sabadoStartHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="sabadoStartMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="sabadoStartAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <div class="time-select">
+                        <select id="sabadoEndHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="sabadoEndMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="sabadoEndAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <input type="number" id="sabadoTolerance" class="tolerance-input" placeholder="Min" disabled min="0">
+                </div>
+                <div class="day-row" data-day="domingo">
+                    <input type="checkbox" id="domingo" value="Domingo">
+                    <label for="domingo">Domingo</label>
+                    <div class="time-select">
+                        <select id="domingoStartHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="domingoStartMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="domingoStartAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <div class="time-select">
+                        <select id="domingoEndHour" disabled><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+                        <select id="domingoEndMin" disabled><option>00</option><option>15</option><option>30</option><option>45</option></select>
+                        <select id="domingoEndAmPm" disabled><option>AM</option><option>PM</option></select>
+                    </div>
+                    <input type="number" id="domingoTolerance" class="tolerance-input" placeholder="Min" disabled min="0">
+                </div>
+            </div>
+            <div class="form-group">
+                <button onclick="addWeeklySchedule()">Agregar Horario Semanal</button>
+            </div>
+        </div>
+        <div class="tables-container">
+            <div class="schedule-view">
+                <div id="showNotification"> </div>
+                <h2>Visualizar Horario</h2>
+                <input type="text" id="searchInputSchedule" class="search-bar" placeholder="Buscar por empleado..." oninput="filterSchedules()">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>ID Horario</th>
+                            <th>ID Usuario</th>
+                            <th>Empleado</th>
+                            <th>Día</th>
+                            <th>Hora de Inicio</th>
+                            <th>Hora de Fin</th>
+                            <th>Tolerancia (min)</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleTableBody">
+                        <!-- Data rows will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="weekly-calendar">
+                <h2>Calendario Semanal</h2>
+                <input type="text" id="searchInputCalendar" class="search-bar" placeholder="Buscar por empleado..." oninput="filterCalendar()">
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>Empleado</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Sábado</th>
+                            <th>Domingo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="weeklyCalendarBody">
+                        <!-- Data rows will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+    
+        </div>
+    </div>
+<div class="notification" id="notification"></div>
+     <script src="../js/horario.js"></script>
+    <script src="../js/panel.js"></script>
+</body>
+</html>

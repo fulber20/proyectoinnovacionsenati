@@ -1,0 +1,233 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #facd32;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .encabezado {
+      background: #062A56;
+      width: 100%;
+      position: fixed;
+      color: white;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-left .app-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .header-left .app-title img {
+      width: 90px;
+      height: 90px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+    }
+
+    .logout-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .logout-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+    .container{
+      position: relative;
+      top: 120px;
+      padding: 20px;
+    }
+ .cont-card {
+  display: flex;
+  flex-wrap: wrap;   /* Permite que las tarjetas bajen en filas */
+  justify-content: center; /* Centra las tarjetas en la fila */
+  gap: 30px;         /* Espacio entre tarjetas */
+  padding: 10px;
+}
+
+
+        .card {
+            width: 420px; /* Reducido para mejor fit en móviles */
+            height: 250px; /* Ajustado para proporción equilibrada */
+            background: #fff;
+            color: #062A56;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            color: #062A56;
+        }
+
+        .card span {
+            font-size: 36px;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif; /* Cambié a Roboto para consistencia */
+            margin: 10px 0;
+            color: #062A56;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin: 5px 0;
+            font-weight: 400;
+        }
+
+        .est-caja {
+            background: #03a346;
+            color: #fff;
+            width: 80px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 10px; /* Centrado con flex, no posición absoluta */
+        }
+
+        progress {
+            width: 100%;
+            height: 12px;
+            margin: 15px 0;
+            -webkit-appearance: none;
+            appearance: none;
+            border-radius: 6px;
+        }
+
+        progress::-webkit-progress-bar {
+            background: #e9ecef;
+            border-radius: 6px;
+        }
+
+        progress::-webkit-progress-value {
+            background: linear-gradient(90deg, #062A56, #0a3b7a);
+            border-radius: 6px;
+        }
+
+        .sold {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+.conte-tabla{
+  background: #fff;
+  height: 600px;
+  border-radius: 20px;
+  padding: 30px;
+}
+.conte-tabla h2{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',;
+  font-size: 24px;
+}
+.cont{
+   width: 100%;
+  height: 500px;          /* le das una altura definida */
+  overflow-y: auto;       /* scroll vertical */
+  overflow-x: hidden;     /* evita scroll horizontal */
+  padding: 20px;
+  /* opcional */
+}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #062A56;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .egreso {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        .monto {
+            text-align: right;
+            font-weight: bold;
+        }
+        .fecha {
+            text-align: center;
+        }
+        .numero {
+            text-align: center;
+            font-family: monospace;
+        }
+        .caja {
+            text-align: center;
+        }
+        /* Para manejar tablas largas, agregar scroll si es necesario */
+        .table-container {
+            max-height: 500px;
+            overflow-y: auto;
+        }

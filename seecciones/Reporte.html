@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CiarOffice</title>
+    <link rel="stylesheet" href="../css/reporte.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   <div class="encabezado">
+     <div class="header-left">
+           <h1 class="app-title">
+              <img src="../img/logo2.png" alt="logo">
+               CiarOffice
+          </h1>
+    </div>
+     <div class="header-right">
+      <div class="user-info">
+        <i class="fas fa-user-circle"></i>
+        <span class="user-name" id="userName">Cargando...</span>
+        <span class="user-role" id="userRole"></span>
+      </div>
+       <button class="logout-btn" onclick="window.location.href='../dashboard.html'">
+        <i class="fas fa-sign-out-alt"></i>
+        Volver
+      </button>
+    </div>
+  </div>
+  <main class="content-todo">
+   <div class="cont-card">
+    <div class="card">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <h2>Repores de ventas</h2>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-calendar-check"></i>
+      <h2>Reporte de asistencia</h2>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-book-open"></i>
+      <h2>Reporte de cursos</h2>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-certificate"></i>
+      <h2>Reporte de certificados</h2>
+    </div>
+    <div class="card">
+      
+      <i class="fa-solid fa-truck"></i>
+      <h2>Reporte de envios</h2>
+    </div>
+    <div class="card">
+       <i class="fa-solid fa-cash-register"></i>
+      <h2>Reporte de caja </h2>
+    </div>
+    </div>
+    <button class="exportar"> exportar a excel</button>
+  </main>
+  </div>
+  <script src="../js/panel.js"></script>
+</body>
+</html>

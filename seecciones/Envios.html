@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CiarOffice - Envíos</title>
+    <link rel="stylesheet" href="../css/envio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="encabezado">
+        <div class="header-left">
+            <h1 class="app-title">
+                <img src="../img/logo2.png" alt="logo">
+                CiarOffice
+            </h1>
+        </div>
+        <div class="header-right">
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name" id="userName">Cargando...</span>
+                <span class="user-role" id="userRole"></span>
+            </div>
+            <button class="logout-btn" onclick="window.location.href='../dashboard.html'">
+                <i class="fas fa-sign-out-alt"></i>
+                Volver
+            </button>
+        </div>
+    </div>
+
+    <div class="container-todo">
+        <div class="shipment-summary">
+    <div class="summary-card enviado-card">
+        <i class="fas fa-truck custom-icon icon-enviados"></i>
+        <div class="text-container">
+            <div class="summary-title">Enviados</div>
+            <div class="summary-value">0</div>
+        </div>
+    </div>
+    <div class="summary-card en-transito-card">
+        <i class="fas fa-shipping-fast custom-icon icon-en-transito"></i>
+        <div class="text-container">
+            <div class="summary-title">En tránsito</div>
+            <div class="summary-value">0</div>
+        </div>
+    </div>
+    <div class="summary-card pendiente-card">
+        <i class="fas fa-clipboard custom-icon icon-pendientes"></i>
+        <div class="text-container">
+            <div class="summary-title">Pendientes</div>
+            <div class="summary-value">0</div>
+        </div>
+    </div>
+    <div class="summary-card total-card">
+        <i class="fas fa-truck custom-icon icon-total"></i>
+        <div class="text-container">
+            <div class="summary-title">Total de envíos</div>
+            <div class="summary-value">0</div>
+        </div>
+    </div>
+</div>
+        <div class="shipment-table">
+            <h3>Registro de Envios</h3>
+            <div class="table-controls">
+                <input type="text" class="search-input" placeholder="Buscar por cliente, dni...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <select class="filter-select">
+                    <option value="">Filtrar</option>
+                    <option value="Enviado">Enviado</option>
+                    <option value="Transito">En tránsito</option>
+                    <option value="Pendiente">Pendiente</option>
+                </select>
+            </div>
+            <div class="cant">
+            <table>
+                <thead>
+    <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>DNI</th>
+        <th>Curso</th>
+        <th>Certificados</th>
+        <th>Teléfono</th>
+        <th>Departamento</th>
+        <th>Provincia</th>
+        <th>Distrito</th>
+        <th>Empresa</th>
+        <th>Sede</th>
+        <th>N° Orden</th>
+        <th>Código</th>
+        <th>Observaciones</th>
+        <th>Estado</th>
+        <th>Fecha Registro</th>
+        <th>Acciones</th>
+    </tr>
+</thead>
+                <tbody id="enviosTableBody">
+        <!-- Datos cargados dinámicamente por JS -->
+    </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    <script src="../js/panel.js"></script>
+    <script src="../js/envios.js"></script>
+</body>
+</html>

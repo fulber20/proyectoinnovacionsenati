@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CiarOffice - Ventas</title>
+    <link rel="stylesheet" href="../css/venta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="encabezado">
+        <div class="header-left">
+            <h1 class="app-title">
+                <img src="../img/logo2.png" alt="logo">
+                CiarOffice
+            </h1>
+        </div>
+        <div class="header-right">
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <span class="user-name" id="userName">Cargando...</span>
+                <span class="user-role" id="userRole"></span>
+            </div>
+            <button class="logout-btn" onclick="window.location.href='../dashboard.html'">
+                <i class="fas fa-sign-out-alt"></i>
+                Volver
+            </button>
+        </div>
+    </div>
+    <div class="container-todo">
+        <div class="sales-summary">
+            <div class="summary-card">
+                <div class="period">Día</div>
+                <div class="date">08/09/2025</div>
+                <div class="amount green">20</div>
+            </div>
+            <div class="summary-card">
+                <div class="period">Semana</div>
+                <div class="date">08/09-13/09-2025</div>
+                <div class="amount">100</div>
+            </div>
+            <div class="summary-card">
+                <div class="period">Mes</div>
+                <div class="date">01/09-30/09-2025</div>
+                <div class="amount orange">300</div>
+            </div>
+            <div class="summary-card">
+                <div class="period">Año</div>
+                <div class="date">2025</div>
+                <div class="amount green">3456</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="detailed-sales">
+                <div class="detailed-header">
+                    <h3>Ventas Detalladas</h3>
+                    <input type="text" class="search-input" placeholder="buscar">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Curso</th>
+                            <th>Agente</th>
+                            <th>Banco</th>
+                            <th>A Nombre</th>
+                            <th>Monto</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CursoA</td>
+                            <td>Agente1</td>
+                            <td>BancoX</td>
+                            <td>Cliente1</td>
+                            <td>s/.120.50</td>
+                            <td>2025-09-01</td>
+                        </tr>
+                        <tr>
+                            <td>CursoB</td>
+                            <td>Agente2</td>
+                            <td>BancoY</td>
+                            <td>Cliente2</td>
+                            <td>s/.200.00</td>
+                            <td>2025-09-02</td>
+                        </tr>
+                        <tr>
+                            <td>CursoC</td>
+                            <td>Agente1</td>
+                            <td>BancoZ</td>
+                            <td>Cliente3</td>
+                            <td>s/.150.75</td>
+                            <td>2025-09-03</td>
+                        </tr>
+                        <tr>
+                            <td>CursoA</td>
+                            <td>Agente3</td>
+                            <td>BancoX</td>
+                            <td>Cliente4</td>
+                            <td>s/.300.25</td>
+                            <td>2025-08-15</td>
+                        </tr>
+                        <tr>
+                            <td>CursoB</td>
+                            <td>Agente2</td>
+                            <td>BancoY</td>
+                            <td>Cliente5</td>
+                            <td>s/.180.00</td>
+                            <td>2025-08-16</td>
+                        </tr>
+                        <tr>
+                            <td>CursoC</td>
+                            <td>Agente1</td>
+                            <td>BancoZ</td>
+                            <td>Cliente6</td>
+                            <td>s/.220.50</td>
+                            <td>2025-07-10</td>
+                        </tr>
+                        <tr>
+                            <td>CursoA</td>
+                            <td>Agente3</td>
+                            <td>BancoX</td>
+                            <td>Cliente7</td>
+                            <td>s/.140.75</td>
+                            <td>2025-07-11</td>
+                        </tr>
+                        <tr>
+                            <td>CursoB</td>
+                            <td>Agente2</td>
+                            <td>BancoY</td>
+                            <td>Cliente8</td>
+                            <td>s/.250.00</td>
+                            <td>2025-06-05</td>
+                        </tr>
+                        <tr>
+                            <td>CursoC</td>
+                            <td>Agente1</td>
+                            <td>BancoZ</td>
+                            <td>Cliente9</td>
+                            <td>s/.190.25</td>
+                            <td>2025-06-06</td>
+                        </tr>
+                        <tr>
+                            <td>CursoA</td>
+                            <td>Agente3</td>
+                            <td>BancoX</td>
+                            <td>Cliente49</td>
+                            <td>s/.130.25</td>
+                            <td>2025-04-19</td>
+                        </tr>
+                        <tr>
+                            <td>CursoB</td>
+                            <td>Agente2</td>
+                            <td>BancoY</td>
+                            <td>Cliente50</td>
+                            <td>s/.150.00</td>
+                            <td>2025-04-20</td>
+                        </tr>
+                        <!-- Agrega más filas si es necesario -->
+                    </tbody>
+                    <tfoot>
+                        <tr class="total-row">
+                            <td colspan="4">Total Monto:</td>
+                            <td>s/.10196.50</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="agent-sales">
+                <h3>Ventas por Agente</h3>
+                <table class="agent-table">
+                    <thead>
+                        <tr>
+                            <th>Agente</th>
+                            <th>Total Vendido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Agente1</td>
+                            <td>s/.1412.00</td>
+                        </tr>
+                        <tr>
+                            <td>Agente2</td>
+                            <td>s/.930.00</td>
+                        </tr>
+                        <tr>
+                            <td>Agente3</td>
+                            <td>s/.874.75</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="agent-total">
+                            <td>Total General:</td>
+                            <td>s/.3216.75</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+   <script src="../js/panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CiarOffice </title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header with user info and logout -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <h1 class="app-title">
+                    <img src="img/logo2.png" alt="logo">
+                    CiarOffice
+                </h1>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <!-- Updated to show full name and role -->
+                    <span class="user-name" id="userName">Cargando...</span>
+                    <span class="user-role" id="userRole"></span>
+                </div>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Cerrar Sesión
+                </button>
+            </div>
+        </header>
+
+        <!-- Main content area -->
+        <main class="dashboard-main">
+            <div class="welcome-section">
+                <!-- Dynamic welcome message with user name -->
+                <h2 id="welcomeMessage">Bienvenido al Panel de Administración</h2>
+                <p>Gestiona tu oficina desde aquí</p>
+            </div>
+            <!-- Dashboard cards/modules can be added here -->
+            <div class="dashboard-grid">
+                <div class="dashboard-card" onclick="window.location.href='seecciones/personalemp.html'" style="cursor: pointer;">
+                    <i class="fas fa-users"></i>
+                    <h3>Personal</h3>
+                    <p>Gestionar usuarios del sistema</p>
+                </div>
+                <div class="dashboard-card" onclick="window.location.href='seecciones/Horario.html'" style="cursor: pointer;">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <h3>Horarios</h3>
+                    <p>Organiza turnos y horarios de trabajo.</p>
+                </div>
+                <div class="dashboard-card" onclick="window.location.href='seecciones/Asistencia.html'" style="cursor: pointer;">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3>Asitencia</h3>
+                    <p>Controla la asistencia y puntualidad del personal.</p>
+                </div>
+                 <div class="dashboard-card" onclick="window.location.href='seecciones/Cursos.html'" style="cursor: pointer;">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Cursos</h3>
+                    <p>Administra cursos y materiales de capacitación.</p>
+                </div>
+                 <div class="dashboard-card" onclick="window.location.href='seecciones/Ventas.html'" style="cursor: pointer;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <h3>Ventas</h3>
+                    <p>Revisa y gestiona las ventas realizadas.</p>
+                </div>
+                 <div class="dashboard-card" onclick="window.location.href='seecciones/Envios.html'" style="cursor: pointer;">
+                    <i class="fa-solid fa-truck"></i>
+                    <h3>Envios</h3>
+                    <p>Controla los pedidos y sus entregas.</p>
+                </div>
+                 <div class="dashboard-card" onclick="window.location.href='seecciones/Certificados.html'" style="cursor: pointer;">
+                    <i class="fa-solid fa-certificate"></i>
+                    <h3>Certificados</h3>
+                    <p>Genera y valida certificados emitidos.</p>
+                </div>
+                 <div class="dashboard-card" onclick="window.location.href='seecciones/Cajac.html'" style="cursor: pointer;">
+                    <i class="fa-solid fa-cash-register"></i>
+                    <h3>caja</h3>
+                    <p>Gestiona lo egresos de la empresa</p>
+                </div>
+                 <div class="dashboard-card" onclick="window.location.href='seecciones/Reporte.html'" style="cursor: pointer;">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Reportes</h3>
+                    <p>Ajustes del sistema</p>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+
+    <script src="js/panel.js"></script>
+</body>
+</html>

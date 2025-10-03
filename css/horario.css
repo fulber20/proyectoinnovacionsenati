@@ -1,0 +1,308 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #facd32;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .encabezado {
+      background: #062A56;
+      width: 100%;
+      position: fixed;
+      color: white;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-left .app-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .header-left .app-title img {
+      width: 90px;
+      height: 90px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+    }
+
+    .logout-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .logout-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+   .main-container {
+            margin-top: 100px;
+            padding: 2rem;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .schedule-form {
+          position: relative;
+              right: 280px;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-form h2 {
+            font-size: 1.6rem;
+            color: #003366;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 0.6rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group select:focus {
+            border-color: #003366;
+            outline: none;
+        }
+
+        .day-row {
+            display: grid;
+            grid-template-columns: auto 1fr 1fr 1fr auto;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .day-row label {
+            font-weight: 500;
+        }
+
+        .day-row input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+
+        .time-select {
+            display: flex;
+            gap: 0.3rem;
+        }
+
+        .time-select select {
+            padding: 0.4rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .tolerance-input {
+            width: 80px;
+            padding: 0.4rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(90deg, #003366, #00509e);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background: linear-gradient(90deg, #00509e, #003366);
+            transform: translateY(-2px);
+        }
+
+        .tables-container {
+          position: relative;
+          right: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .schedule-view,
+        .weekly-calendar {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-view h2,
+        .weekly-calendar h2 {
+            font-size: 1.6rem;
+            color: #003366;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .search-bar:focus {
+            border-color: #003366;
+            outline: none;
+        }
+
+        .schedule-table,
+        .calendar-table {
+            width: 100%;
+            height: 200px;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .schedule-table thead,
+        .calendar-table thead {
+            background: #003366;
+            color: white;
+        }
+
+        .schedule-table th,
+        .schedule-table td,
+        .calendar-table th,
+        .calendar-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .schedule-table tbody tr:hover,
+        .calendar-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .action-btn {
+            padding: 6px 12px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            background: #c82333;
+        }
+
+        .calendar-table td {
+            vertical-align: top;
+        }
+
+        .schedule-entry {
+            font-size: 0.85rem;
+            padding: 5px;
+            border-radius: 4px;
+            background: #e9f7ff;
+            white-space: nowrap;
+        }
+        .btn-eliminar {
+  background: #c82333;        /* rojo base */
+  color: #fff;                /* texto blanco */
+  padding: 10px 18px;         /* espacio interno */
+  border: none;               /* sin borde */
+  border-radius: 8px;         /* esquinas redondeadas */
+  font-size: 14px;            /* tamaño de texto */
+  font-weight: 500;           /* un poco más grueso */
+  cursor: pointer;            /* manito al pasar */
+  transition: all 0.3s ease;  /* animación suave */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* sombra ligera */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;                   /* espacio entre icono y texto */
+}
+
+/* Hover */
+.btn-eliminar:hover {
+  background: #a71d2a;        /* rojo más oscuro */
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+  transform: translateY(-2px); /* efecto de elevar */
+}
+
+/* Active (cuando se hace clic) */
+.btn-eliminar:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+
+        @media (max-width: 1024px) {
+            .main-container {
+              
+                grid-template-columns: 1fr;
+            }
+        }
