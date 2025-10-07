@@ -67,7 +67,50 @@ body {
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-in-out;
+}
 
+/* Notification types */
+.notification.success {
+  background-color: #28a745;
+}
+.notification.error {
+  background-color: #dc3545;
+}
+.notification.info {
+  background-color: #17a2b8;
+}
+.notification.warning {
+  background-color: #ffc107;
+}
+
+/* Animation for sliding in */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation for sliding out (optional, if you want to animate removal) */
+.notification.removing {
+  animation: slideOut 0.3s ease-in-out forwards;
+}
 .logout-btn:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-1px);

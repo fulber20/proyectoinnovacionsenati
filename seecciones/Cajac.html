@@ -29,212 +29,102 @@
             </button>
         </div>
     </div>
+    <!-- Agrega este HTML al final de tu body para el modal de notificación -->
+<div id="notificationModal" class="modal">
+</div>
     <div class="container">
         <div class="cont-card">
-                <div class="card">
-                    <h2>Registrar Gasto</h2>
-                    <span>S/.</span>
-                    <p>Click para registrar</p>
-                </div>
-                <div class="card">
-                    <h2>Caja Actual</h2>
-                    <p> CAJA001</p>
-                    <span>S/. 00.0</span>
-                    <p>Salado Disponible</p>
-                    <p class="est-caja">Activo</p>
-                </div>
-                <div class="card">
-                    <h2>presupuesto</h2>
-                    <span>S/. 0.00</span>
-                    <progress id="nativeProg" value="40" max="100"></progress>
-                    <p class="sold">0% de 0.00</p>
-                </div>
-                <div class="card">
-                    <h2>Hoy</h2>
-                    <span>S/ 0.00</span>
-                    <p>Gasto del dia</p>
-                </div>
+            <div class="card" onclick="openCajaModal()">
+                <h2>Crear Caja</h2>
+                <span><i class="fas fa-plus-circle"></i></span>
+                <p>Click para crear nueva caja</p>
+            </div>
+            <div class="card">
+                <h2>Caja Actual</h2>
+                <p id="cajaId">Cargando...</p>
+                <span id="saldoActual">S/. 0.00</span>
+                <p>Saldo Disponible</p>
+                <p class="est-caja" id="cajaEstado">Activo</p>
+            </div>
+            <div class="card">
+                <h2>Presupuesto</h2>
+                <span id="montoInicial">S/. 0.00</span>
+                <progress id="nativeProg" value="0" max="100"></progress>
+                <p class="sold" id="porcentaje">0% de 0.00</p>
+            </div>
+            <div class="card">
+                <h2>Hoy</h2>
+                <span id="gastoDia">S/. 0.00</span>
+                <p>Gasto del día</p>
+            </div>
         </div>
-   
-     <div class="conte-tabla">
-  <h2>Registro de Gasto</h2>
-  <div class="cont">
-    <table border="1" cellpadding="8" cellspacing="0">
-      <thead>
-        <tr>
-          <th>Descripción</th>
-          <th>Tipo</th>
-          <th>Número</th>
-          <th>Fecha</th>
-          <th>Monto</th>
-          <th>Caja</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Compra de útiles</td>
-          <td>Egreso</td>
-          <td>001</td>
-          <td>2025-10-03</td>
-          <td>S/ 150.00</td>
-          <td>Caja 1</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-        <tr>
-          <td>Pago servicio luz</td>
-          <td>Egreso</td>
-          <td>002</td>
-          <td>2025-10-03</td>
-          <td>S/ 300.00</td>
-          <td>Caja 2</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+        <div class="conte-tabla">
+            <h2>Registro de Gasto</h2>
+            <button class="add-gasto-btn" onclick="openGastoModal()">Registrar Gasto</button>
+            <div class="cont">
+                <table border="1" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th>Tipo</th>
+                            <th>Número</th>
+                            <th>Fecha</th>
+                            <th>Monto</th>
+                            <th>Caja</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gastosTableBody">
+                        <!-- Gastos se llenarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para crear caja -->
+    <div id="cajaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCajaModal()">&times;</span>
+            <h2>Crear Nueva Caja</h2>
+            <form id="cajaForm">
+                <label for="idAdmin">ID Administrador:</label>
+                <input type="text" id="idAdmin" name="idAdmin" required>
+                <label for="montoInicial">Monto Inicial:</label>
+                <input type="number" id="montoInicialForm" name="montoInicial" step="0.01" required>
+                <label for="fechaEntrega">Fecha de Entrega:</label>
+                <input type="date" id="fechaEntrega" name="fechaEntrega" required>
+                <button type="submit">Crear Caja</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para registrar gasto -->
+    <div id="gastoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGastoModal()">&times;</span>
+            <h2>Registrar Gasto</h2>
+            <form id="gastoForm">
+                <label for="idCaja">ID Caja:</label>
+                <input type="text" id="idCaja" name="idCaja" required readonly>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" name="descripcion" required>
+                <label for="monto">Monto:</label>
+                <input type="number" id="monto" name="monto" step="0.01" required>
+                <label for="tipoComprobante">Tipo de Comprobante:</label>
+                <select id="tipoComprobante" name="tipoComprobante" required>
+                    <option value="Boleta">Boleta</option>
+                    <option value="Factura">Factura</option>
+                    <option value="Recibo">Recibo</option>
+                </select>
+                <label for="nroComprobante">Nº Comprobante:</label>
+                <input type="text" id="nroComprobante" name="nroComprobante" required>
+                <label for="fechaGasto">Fecha:</label>
+                <input type="date" id="fechaGasto" name="fechaGasto" required>
+                <button type="submit">Registrar Gasto</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/caja.js"></script>
 <script src="../js/panel.js"></script>
 </body>
 </html>

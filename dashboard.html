@@ -87,9 +87,68 @@
                 </div>
                 
             </div>
-        </main>
+             <!-- Floating Chatbot Button -->
+    <div class="chatbot-btn" onclick="toggleChatbot()">
+        <i class="fas fa-comment-dots"></i>
     </div>
 
+    <!-- Floating Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>CiarBot</h3>
+            <i class="fas fa-times close-chat" onclick="toggleChatbot()"></i>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chat-message bot">¡Hola! Soy CiarBot, tu asistente. ¿En qué puedo ayudarte?</div>
+        </div>
+        <div class="chatbot-footer">
+            <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+        </main>
+    </div>
     <script src="js/panel.js"></script>
+    <script>
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const chatbotBody = document.getElementById('chatbotBody');
+            const message = input.value.trim();
+            if (message) {
+                // Add user message
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user';
+                userMessage.textContent = message;
+                chatbotBody.appendChild(userMessage);
+
+                // Add bot response (placeholder)
+                const botMessage = document.createElement('div');
+                botMessage.className = 'chat-message bot';
+                botMessage.textContent = 'Procesando tu mensaje...';
+                chatbotBody.appendChild(botMessage);
+
+                // Clear input
+                input.value = '';
+
+                // Scroll to bottom
+                chatbotBody.scrollTop = chatbotBody.scrollHeight;
+
+                // Here you can add logic to process the message and generate a real bot response
+            }
+        }
+
+        // Allow sending message with Enter key
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
 </body>
 </html>

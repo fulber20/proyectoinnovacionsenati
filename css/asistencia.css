@@ -44,7 +44,73 @@ body {
   align-items: center;
   gap: 1rem;
 }
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
 
+.notification.success { background-color: #28a745; }
+.notification.error { background-color: #dc3545; }
+.notification.info { background-color: #17a2b8; }
+
+/* Estilos para las notificaciones */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.notification.success { background-color: #28a745; }
+.notification.error { background-color: #dc3545; }
+.notification.info { background-color: #17a2b8; }
+
+/* Estilos para los estados en la tabla */
+.estado {
+  padding: 2px 8px;
+  border-radius: 3px;
+  display: inline-block; /* Asegura que el fondo y color se apliquen correctamente */
+}
+
+.estado.temprano { color: green; background-color: #e0ffe0; }
+.estado.tarde { color: rgb(189, 116, 6); background-color: #fff3e0; }
+.estado.falta { color: red; background-color: #ffe0e0; } /* Corregido de 'fala' a 'falta' */
+.estado.a-tiempo { color: #28a745; background-color: #e0ffe0; } 
+.estado.correcto { color: #09d83a; background-color: #e0ffe0; }/* Corregido el fondo vacío */
+.estado.salida-temprana { color: orange; background-color: #fff0e0; }
+.estado.no-programado { color: gray; background-color: #f0f0f0; }
+
+.card-tarjeta, .card_personal, .chart-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.btn-detalles { padding: 5px 10px; }
+
+.table-wrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 8px; border: 1px solid #ddd; text-align: left; }
+th { background-color: #f2f2f2; }
 .user-info {
   display: flex;
   align-items: center;

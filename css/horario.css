@@ -190,8 +190,11 @@
 
         .schedule-view,
         .weekly-calendar {
+            width: 165%;
             background: white;
             padding: 2rem;
+            height: 400px;
+            overflow: auto;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
@@ -270,6 +273,36 @@
             background: #e9f7ff;
             white-space: nowrap;
         }
+        .notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.notification.success {
+  background-color: #28a745;
+}
+
+.notification.error {
+  background-color: #dc3545;
+}
+
+.notification.info {
+  background-color: #17a2b8;
+}
+
+.notification.warning {
+  background-color: #ffc107;
+}
         .btn-eliminar {
   background: #c82333;        /* rojo base */
   color: #fff;                /* texto blanco */
@@ -306,3 +339,4 @@
                 grid-template-columns: 1fr;
             }
         }
+        

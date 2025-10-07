@@ -5,12 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchSchedules();
 });
 
-// Función para mostrar notificaciones
 function showNotification(message, type = "error") {
   const notification = document.getElementById("notification");
+  if (!notification) {
+    console.error("Elemento notification no encontrado en el DOM");
+    return;
+  }
   notification.textContent = message;
   notification.className = `notification ${type}`;
   notification.style.display = "block";
+  notification.style.opacity = "0"; // Asegurar opacidad inicial
   setTimeout(() => {
     notification.style.opacity = "1";
   }, 50);
@@ -259,26 +263,39 @@ function filterCalendar() {
   }
 }
 
-// Eliminar horario
-// Actualizar deleteSchedule en horario.js
 async function deleteSchedule(id_horario) {
-  if (confirm("¿Estás seguro de eliminar este horario?")) {
-    try {
-      console.log("Intentando eliminar horario con id_horario:", id_horario);
-      const response = await fetch(`http://localhost:3000/horarios/${id_horario}`, {
-        method: "DELETE",
-      });
-      console.log("Respuesta del servidor:", response.status, response.statusText);
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(`Error ${response.status}: ${errorData.error || 'Desconocido'}`);
+  if (!id_horario || isNaN(id_horario)) {
+    console.error("ID de horario inválido:", id_horario);
+    showNotification("ID de horario inválido.", "error");
+    return;
+  }
+
+  try {
+    console.log("Intentando eliminar horario con id_horario:", id_horario);
+    const response = await fetch(`http://localhost:3000/horarios/${id_horario}`, {
+      method: "DELETE",
+    });
+    console.log("Respuesta del servidor:", response.status, response.statusText);
+
+    if (!response.ok) {
+      let errorData;
+      try {
+        errorData = await response.json();
+      } catch (jsonErr) {
+        errorData = { error: await response.text() || "Error desconocido" };
       }
-      showNotification("Horario eliminado exitosamente.", "success");
-      fetchSchedules(); // Recargar horarios después de eliminar
-    } catch (err) {
-      console.error("Error en deleteSchedule:", err);
+      throw new Error(`Error ${response.status}: ${errorData.error || "Desconocido"}`);
+    }
+    showNotification("Horario eliminado exitosamente.", "success");
+    fetchSchedules();
+  } catch (err) {
+    console.error("Error en deleteSchedule:", err.message);
+    if (err.message.includes("db is not defined")) {
+      showNotification("Error del servidor: No se pudo conectar con la base de datos.", "error");
+    } else if (err.message.includes("foreign key constraint fails")) {
+      showNotification("Error: No se puede eliminar el horario porque está vinculado a un usuario.", "error");
+    } else {
       showNotification("Error al eliminar horario: " + err.message, "error");
     }
   }
 }
-

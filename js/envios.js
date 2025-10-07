@@ -339,8 +339,8 @@ const printContent = `
 
 // Actualizar número de orden y código (a 'Enviado')
 async function guardarEnvio(id, empresa_envio, row) {
-  const numero_orden = row.querySelector('.numero-orden').value.trim();
-  const codigo_envio = empresa_envio !== 'Olva' ? row.querySelector('.codigo-envio').value.trim() : '';
+  const numero_orden = row.querySelector('.numero-orden-input').value.trim();
+  const codigo_envio = empresa_envio !== 'Olva' ? row.querySelector('.codigo-envio-input').value.trim() : '';
   if (!numero_orden) {
     showNotification('Debe ingresar un número de orden.', 'warning');
     return;
@@ -349,33 +349,47 @@ async function guardarEnvio(id, empresa_envio, row) {
     const response = await fetch(`http://localhost:3000/envios/${id}/orden`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ numero_numero_orden, codigo_envio })
+      body: JSON.stringify({ numero_orden, codigo_envio })
     });
     if (!response.ok) throw new Error('Error al actualizar orden');
     showNotification('Envío marcado como Enviado.', 'success');
-    await fetchEnvios();
-    await fetchEnviosSummary();
+    await fetchEnvios(); // Recarga tabla
+    await fetchEnviosSummary(); // Actualiza contadores
   } catch (err) {
     console.error('Error en guardarEnvio:', err);
     showNotification('Error al guardar: ' + err.message, 'error');
   }
 }
 
-// Filtrar y buscar en la tabla
 function filterTable() {
-    const searchInput = document.querySelector('.search-input').value.toLowerCase();
-    const filterSelect = document.querySelector('.filter-select').value.toLowerCase();
-    const rows = document.querySelectorAll('table tbody tr');
-    rows.forEach(row => {
-        const cells = row.querySelectorAll('td');
-        if (cells.length < 15) return;
-        const cliente = cells[1] ? cells[1].textContent.toLowerCase() : '';
-        const dni = cells[2] ? cells[2].textContent.toLowerCase() : '';
-        const estado = cells[14] ? cells[14].textContent.toLowerCase().replace(/\s+/g, '-') : '';
-        const matchesSearch = cliente.includes(searchInput) || dni.includes(searchInput);
-        const matchesFilter = filterSelect === '' || estado === filterSelect;
-        row.style.display = matchesSearch && matchesFilter ? '' : 'none';
-    });
+  const searchInput = document.querySelector('.search-input').value.toLowerCase();
+  const filterSelect = document.querySelector('.filter-select').value.toLowerCase();
+  const rows = document.querySelectorAll('table tbody tr');
+  let visibleRows = 0;
+
+  rows.forEach(row => {
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 15) return;
+
+    const cliente = cells[1] ? cells[1].textContent.toLowerCase() : '';
+    const dni = cells[2] ? cells[2].textContent.toLowerCase() : '';
+    const estado = cells[14] ? cells[14].textContent.toLowerCase().replace(/\s+/g, '-') : '';
+
+    const matchesSearch = cliente.includes(searchInput) || dni.includes(searchInput);
+    const matchesFilter = filterSelect === '' || estado === filterSelect;
+
+    if (matchesSearch && matchesFilter) {
+      row.style.display = '';
+      visibleRows++;
+    } else {
+      row.style.display = 'none';
+    }
+  });
+
+  // Show notification if no rows are visible
+  if (visibleRows === 0) {
+    showNotification('No se encontraron envíos que coincidan con la búsqueda o filtro.', 'info');
+  }
 }
 
 // Función para manejar comandos del chatbot
